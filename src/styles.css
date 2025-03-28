@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@layer components {
+    .quote-container {
+        @apply p-4 sm:p-6 rounded-lg shadow-md transition-all duration-300 border;
+    }
+
+    .quote-text {
+        @apply text-base sm:text-lg font-semibold leading-tight;
+    }
+
+    .quote-author {
+        @apply italic text-sm sm:text-base mt-2;
+    }
+
+    .quote-date {
+        @apply text-xs sm:text-sm mt-1 text-gray-300;
+    }
+
+    .bg-primary {
+        @apply bg-blue-900 text-white border-blue-800;
+    }
+
+    .bg-highlight {
+        @apply bg-yellow-800 text-black border-yellow-600;
+    }
+}

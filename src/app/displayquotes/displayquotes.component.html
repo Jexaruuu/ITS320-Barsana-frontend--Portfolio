@@ -5,12 +5,12 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <div *ngFor="let quote of quotes; let i = index"
-             class="p-4 sm:p-6 rounded-lg shadow-md transition-all duration-300 border"
-             [ngClass]="i === 2 ? 'bg-yellow-500 text-black border-yellow-600' : 'bg-blue-900 text-white border-blue-800'">
+             class="quote-container"
+             [ngClass]="i === 2 ? 'bg-highlight' : 'bg-primary'">
             
-            <p class="text-base sm:text-lg font-semibold leading-tight">"{{ quote.quote }}"</p>
-            <p class="italic text-sm sm:text-base mt-2">- {{ quote.author }}</p>
-            <p class="text-xs sm:text-sm mt-1 text-gray-300">Published: {{ quote.published }}</p>
+            <p class="quote-text">"{{ quote.quote }}"</p>
+            <p class="quote-author">- {{ quote.author }}</p>
+            <p class="quote-date">Published: {{ quote.published }}</p>
         </div>
     </div>
 </div>
