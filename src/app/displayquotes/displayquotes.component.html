@@ -1,0 +1,16 @@
+<div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+        Inspirational Quotes
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div *ngFor="let quote of quotes; let i = index"
+             class="p-6 rounded-lg shadow-lg transition-all duration-300 border-2"
+             [ngClass]="i === 2 ? 'bg-yellow-500 text-black border-yellow-600' : 'bg-blue-900 text-white border-blue-800'">
+            
+            <p class="text-lg font-semibold">"{{ quote.quote }}"</p>
+            <p class="italic text-sm mt-2">- {{ quote.author }}</p>
+            <p class="text-xs mt-1 text-gray-300">Published: {{ quote.published }}</p>
+        </div>
+    </div>
+</div>
