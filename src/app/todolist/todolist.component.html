@@ -1,0 +1,23 @@
+<div class="h-dvh flex flex-col justify-center items-center bg-gradient-to-r from-green-900 to-green-700 text-white p-4 relative overflow-hidden">
+    
+    <div class="absolute w-32 h-32 bg-white opacity-20 rounded-full top-10 left-10"></div>
+    <div class="absolute w-40 h-40 bg-white opacity-20 rounded-full bottom-20 right-20"></div>
+    <div class="absolute w-24 h-24 bg-white opacity-20 rounded-full top-1/2 left-1/4"></div>
+
+    <div class="flex flex-col items-center gap-6 bg-white text-green-900 p-8 rounded-xl shadow-2xl border border-green-500 relative z-10">
+        <form method="post" class="flex flex-col gap-4 w-80">
+            <label for="todoitem" class="text-lg font-bold text-green-700">Add to To-Do List</label>
+
+            <input [formControl]="item" type="text" name="todoitem" class="border border-green-500 rounded-md px-2 py-1 focus:ring-2 focus:ring-green-600">
+
+            <button class="bg-green-500 text-white font-bold py-2 rounded-lg hover:bg-green-600 transition" type="button" (click)="pushToList()">Add</button>
+        </form>
+    
+        <ol class="w-80 h-64 bg-green-100 text-green-900 font-semibold p-4 rounded-lg shadow-lg overflow-auto">
+            <p class="text-xl underline">To-Do List</p>
+            @for (item of list; track item) {
+                <li key={item} class="border-b border-green-600 py-1">{{item}}</li>
+            }
+        </ol>
+    </div>
+</div>
